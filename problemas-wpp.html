@@ -24,18 +24,15 @@
     <div class="container banner pt-5">
       <div class="row">
         <div class="col-12 d-flex justify-content-center">
-          <a href="./index.html"><img src="./img/perfil.png" alt="" class="foto"/></a>
-        </div>
-      </div>
-      <div class="row nome ">
-        <div class="col-12 d-flex justify-content-center">
-          <img class="img-fluid" src="./img/nome.png" alt=""/>
+          <a href="./index.html"
+            ><img src="./img/perfil.png" alt="" class="foto"
+          /></a>
         </div>
       </div>
       <div class="row bio">
-        <!-- <div class="col-12 nome text-center pt-3">
+        <div class="col-12 nome text-center pt-3">
           <h1>Regiane Silva Ávila</h1>
-        </div> -->
+        </div>
         <div class="col-12 especialidades text-center pb-4">
           <p>Psicóloga | Psicanalista | Psicopedagoga</p>
         </div>
@@ -44,10 +41,29 @@
 
     <div class="links container pb-5">
       <div class="row">
-        <div class="d-flex flex-column col-12 col-sm-8 col-md-6 mx-auto border w-75 bg-secondary-subtle py-2 pb-3 rounded-2 justify-content-center align-items-center">
+        <div
+          class="d-flex flex-column col-12 col-sm-8 col-md-6 mx-auto border w-75 bg-secondary-subtle py-2 pb-3 rounded-2 justify-content-center align-items-center"
+        >
           <h2 class="text-center">ATENÇÃO</h2>
-          <p>Caso não esteja conseguindo acessar meu WhatsApp salve meu número manualmente e entre em contato:</p>
-          <a class="link btn text-decoration-none col-12 col-sm-8 col-md-6 " href="tel:+5537991272061">(37) 99127-2061</a>
+          <p class="text-center">Caso não esteja conseguindo falar comigo siga os passos abaixo:</p>
+          <ol>
+            <li>
+              Clique no botão abaixo para copiar meu número:
+              <a
+                id="copyText"
+                class="link btn text-decoration-none col-12 col-sm-8 col-md-6"
+                href="tel:+5537991272061"
+                >(37) 99127-2061</a
+              >
+            </li>
+            <li>Crie um novo contato e salve meu número em sua agenda;</li>
+            <li>Procure meu contato no WhatsApp;</li>
+            <li>Envie sua mensagem pra mim;</li>
+          </ol>
+          <p>Estou aguardando seu contato!</p>
+          <!-- <p id="copyText">(37) 99127-2061</p> -->
+
+          <div id="notification" class="notification"></div>
         </div>
       </div>
     </div>
@@ -55,17 +71,45 @@
     <div class="container footer pt-2 pb-2">
       <div class="row">
         <div class="col d-flex justify-content-center">
-          <img class="img-fluid" src="./img/logotipo.png" alt="">
+          <img class="img-fluid" src="./img/logotipo.png" alt="" />
         </div>
       </div>
     </div>
-
-    
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script>
+      function mensagemRetorno(mensagem) {
+        var notification = document.getElementById("notification");
+
+        // Correção aqui: usar 'innerText = mensagem' ao invés de 'innerText(mensagem)'
+        notification.innerText = mensagem;
+        notification.style.display = "block";
+
+        setTimeout(function () {
+          notification.style.display = "none";
+        }, 5000);
+      }
+
+      document
+        .getElementById("copyText")
+        .addEventListener("click", function () {
+          const textoParaCopiar = "(37)99127-2061";
+
+          navigator.clipboard
+            .writeText(textoParaCopiar)
+            .then(() => {
+              mensagemRetorno("Número copiado com sucesso!");
+            })
+            .catch((err) => {
+              mensagemRetorno(
+                "Falha ao copiar o texto. Por favor, copie manualmente."
+              );
+            });
+        });
+    </script>
   </body>
 </html>
