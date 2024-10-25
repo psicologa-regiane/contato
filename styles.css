@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(102, 115, 152, 1) 29%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  /* background: rgb(102, 115, 152);
+  background: linear-gradient(
+    0deg,
+    rgba(102, 115, 152, 1) 0%,
+    rgba(255, 255, 255, 1) 85%
+  ); */
+  background-repeat: no-repeat;
+  font-family: "Montserrat", sans-serif;
+}
+
+.foto {
+  width: 6rem;
+}
+
+h1,
+p,
+h2 {
+  color: #1d4a8d;
+}
+
+p {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.btn {
+  background-color: #1d4a8d;
+  color: white;
+  font-size: 0.8rem;
+}
+
+.btn:hover {
+  background-color: #08316e;
+  color: white;
+}
+
+.bi {
+  font-size: 0.8rem;
+}
+
+.footer img {
+  width: 5rem;
+  opacity: 50%;
+  position: fixed;
+  bottom:0;
+  left:center;
+  padding-bottom: 2rem;
+}
+
+h2 {
+  font-size: 1rem;
+}
